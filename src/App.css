@@ -1,0 +1,563 @@
+/* تخصيص NavLink النشط لكل الروابط */
+/* اللون الأحمر الأساسي */
+/* نأكد إن الصفحة كلها تاخد طول كامل */
+
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navbar{
+  border-bottom: 3px solid red;
+   position: fixed;
+   height: auto;
+  min-height: unset;        /* اختاري ارتفاع ثابت */
+  display: flex;
+  align-items: center;
+
+padding: 6px 0 !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: white;
+}
+
+
+
+.logo-wrapper img {
+  height: 40px;
+  transform: scale(2.3);
+  transform-origin: left center;
+}
+
+.nav-item .nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+    padding-bottom: 8px !important;
+}
+
+.nav-item .nav-link.active-link {
+    color: red !important;
+    font-weight: 600;
+}
+
+/* الشريط الأحمر تحت الرابط النشط */
+.nav-item .nav-link.active-link::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 15%;
+    right: 15%;
+    height: 3px;
+    background-color: red;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* للموبايل - الشريط يكون كامل العرض */
+@media (max-width: 991px) {
+    .nav-item .nav-link.active-link::after {
+        left: 10px;
+        right: 10px;
+    }
+}
+
+/* تحسين الـ Hover */
+.nav-link:hover {
+    color: #dc3545 !important;
+}
+
+/* Dropdown items النشطة */
+.dropdown-item.active {
+    background-color: #dc3545 !important;
+    color: white !important;
+}
+
+/* تخصيص الـ Dropdown الرئيسي */
+.nav-item.dropdown .nav-link.active-link::after {
+    bottom: -5px;
+    left: 10%;
+    right: 10%;
+}
+/* البانر */
+.hero-section {
+  position: relative;
+  height: 500px;
+  background: 
+    linear-gradient(90deg, rgba(220, 53, 69, 0.8) 20%, rgba(220, 53, 69, 0.4) 70%),
+    url('./assets/accounting.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding-bottom: 120px; /* مساحة للكاردات */
+}
+
+.hero-content {
+  position: relative;
+padding-top: 150px;
+  z-index: 3;
+  color: white;
+  max-width: 600px;
+ 
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+.icon-minCard{
+  color: red !important;
+}
+.hero-btn {
+  background-color: red;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.text-About{
+  color: red !important;
+}
+/* .hero-btn:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+} */
+
+/* الكاردات */
+.minicards-container {
+  position: relative;
+  margin-top: -150px !important;
+  z-index: 5;
+}
+
+.card-move {
+  border-radius: 12px !important;
+  transition: all 0.3s ease;
+  border: none !important;
+  overflow: hidden;
+}
+
+.card-move:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(220, 53, 69, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto 20px;
+  color: #dc3545;
+  transition: all 0.3s ease;
+}
+
+.card:hover .card-icon {
+  background: rgba(220, 53, 69, 0.2);
+  transform: scale(1.1);
+}
+
+.card-body {
+  text-align: center;
+  padding: 20px 25px 30px !important;
+}
+
+.card-title {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 1.25rem;
+}
+
+.card-text {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+/* تحكم في السلايدر نفسه */
+.controller {
+  width: 100%;
+  max-width: 1200px;  /* تحديد أقصى عرض */
+  margin: 0 auto;     /* لتوسيطه أفقياً */
+}
+
+/* تحكم في كل سلايد */
+.swiper-slide {
+  display: flex;
+  justify-content: center; /* توسيط الصورة أفقياً */
+  align-items: center;     /* توسيط الصورة رأسياً */
+}
+
+/* تحكم في الصور */
+.partner-logo {
+  max-height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+
+/* About Section */
+.size-title{
+  font-size: 1.5rem !important;
+}
+.size-text{
+  font-size: 1rem !important;
+  color: #333 !important;
+  font-weight: 500 !important;
+}
+.about-us{
+  width: 90% !important;
+  text-align: start !important;
+}
+.sub-text{
+
+}
+.box-img{
+  width:10rem !important;
+}
+.about-img-box{
+  width: 40% !important;
+}
+.about-img-box img{
+  height: 100% !important;}
+
+  .stats-section .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* مسافة بين الكروت */
+}
+
+.stat-card {
+  flex: 1 1 200px; /* يعني عرض الكارد يكون 200px على الأقل، ينمو حسب المساحة */
+  max-width: 250px;
+  /* background: transparent; */
+    background-color: rgba(0, 0, 0, 0.534); /* overlay شفاف */
+align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+.stat-card .icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: white;
+  text-align: center;
+}
+.stat-card .number {
+  font-size: 2.5rem;
+  color: red;
+  margin-bottom: 10px;
+}
+.stat-card .label {
+  font-size: 1.5rem;
+  color: white;
+}
+.stats-section {
+  background-image: url('../src/assets/bk.ground.jpg');
+  background-size: cover;
+  background-position: center;
+  /* padding: 50px 0; */
+}
+
+.stats-section .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.icon-style{
+  color: white !important;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+.footer{
+  background-color: black !important;
+}
+.sub-footer{
+  background-color: red !important;
+  padding: 10px 0 !important;
+  font-size: 0.9rem !important;
+}
+.heroWrapper {
+  position: relative;
+  height: 80vh;          /* 👈 الارتفاع هنا فقط */
+  width: 100%;
+  overflow: hidden;      /* 👈 يمنع أي تمدد */
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  max-height: 100vh;
+  object-fit: cover;
+  display: block;
+}
+
+
+.heroContent {
+  position: absolute;
+  inset: 0;              /* top, right, bottom, left = 0 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+}
+
+/* .section-ourMission {
+  max-width: 100%;
+}
+
+/* Text box */
+/* .our-mission {
+  max-width: 90%;
+} */
+
+/* Image */
+/* .mission-img {
+  max-width: 100%;
+} */
+
+/* 📱 Mobile */
+/* @media (max-width: 768px) {
+  .our-mission {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  } */
+
+  /* .mission-img {
+    margin-top: 20px;
+    width: 80%;
+  }
+}  */
+/* .section-ourMission {
+  max-width: 100%;
+}
+
+/* Text box */
+/* .our-mission {
+  max-width: 100%;
+  padding-right: 20px;   /* 👈 يخليه يبدأ صح جوه الكونتينر */
+/* }   */
+
+/* Image */
+.mission-img {
+  max-width: 100%;
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .our-mission {
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .mission-img {
+    margin-top: 20px;
+    width: 80%;
+  }
+}
+@media (min-width: 992px) {
+  .our-mission {
+    padding-right: 40px;
+  }
+}
+
+.img-values{
+  width: 5rem;
+  height: 5rem;
+}
+.contactUs{
+  margin-top: 8rem !important;
+}
+.contactUs h2{
+font-size: 35px;
+text-transform: capitalize;
+
+}
+.form-contact button{
+background-color: red !important;
+border: 0;
+padding: 1rem 2rem;
+font-weight: 600;
+}
+.form-contact label{
+  font-weight: 600;
+}
+/* للشاشات الصغيرة */
+@media (max-width: 768px) {
+  .navbar{
+  border-bottom: 3px solid red;
+   position: fixed;
+ 
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: white;
+}
+  .hero-section {
+    height: 400px;
+    padding-bottom: 80px;
+  }
+  
+  .hero-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .hero-content h1 {
+    margin-top: 90px;
+    font-size: 2.2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+  .hero-btn{
+    display: none;
+  }
+  
+  .minicards-container {
+    margin-top: -60px !important;
+      /* z-index: 5; */
+
+  }
+  
+  .card {
+    margin-bottom: 20px;
+  }
+}
+
+/* للشاشات المتوسطة */
+@media (max-width: 992px) {
+  .hero-section {
+    background: 
+      linear-gradient(90deg, rgba(220, 53, 69, 0.9) 30%, rgba(220, 53, 69, 0.6) 100%),
+      url('./assets/accounting.jpg') no-repeat center center;
+  }
+}
+@media (max-width: 768px) {
+  .heroContent {
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 16px;
+  }
+}
+.font-txt{
+  font-size: 2rem !important;
+  color: red !important;
+
+}
+.acc-txt{
+  font-size: 1.5rem !important;
+}
+/* Container general */
+.services-container {
+  max-width: 900px;  /* الحد الأقصى للعرض */
+  margin: 0 auto;    /* يجيب الديف في منتصف الصفحة */
+  padding: 0 15px;   /* مسافة من الأطراف على الموبايل */
+}
+
+/* Card general */
+.service-card {
+  max-width: 570px;
+  margin: 20px auto;  /* يخلي الكارد في المنتصف */
+}
+
+/* Image */
+.service-img {
+  /* color: rgba(180, 50, 78, 0.705); */
+  max-width: 150px;
+  margin: 0 auto;
+}
+
+/* Check icon */
+.check-icon {
+  color: red;
+  margin-right: 8px;
+}
+.box-services{
+  width: 100%;
+  height: 100%;
+  background-color: #f5dada;
+}
+.service-card{
+border-radius: 12px !important;
+  transition: all 0.3s ease;
+  border: none !important;
+ 
+}
+.service-card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+}
+/* 
+ border-radius: 12px !important;
+  transition: all 0.3s ease;
+  border: none !important;
+  overflow: hidden;
+}
+
+.card-move:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+}
+*/
+/* 📱 Mobile & Tablet */
+@media (max-width: 768px) {
+  .service-card {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .service-img {
+    max-width: 80px;
+    margin-bottom: 15px;
+  }
+
+  .card-body h3 {
+    font-size: 1.3rem;
+  }
+
+  .card-body p {
+    font-size: 0.95rem;
+  }
+}
+footer{
+  display: fixed;
+  bottom: 0;
+  left: 0;
+}
