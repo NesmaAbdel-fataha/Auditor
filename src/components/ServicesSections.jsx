@@ -4,7 +4,7 @@ import img2 from '../assets/aduting.png'
 import img3 from '../assets/tax.png'
 import img4 from '../assets/investement2.png'
 import img5 from '../assets/ssrt.png'
-
+import img6 from '../assets/manger.png'
 import '../App.css'
 
 const ServicesSections = () => {
@@ -44,6 +44,53 @@ const ServicesSections = () => {
 
         </div>
       </div>
+{/* ssssssssssssssssssssssss */}
+<a href="https://auditor-eg.com/" target='_blank' className="text-decoration-none text-dark">
+  <div className="card service-card p-3 mx-auto h-100">
+    <div className="row g-0 align-items-center">
+
+      {/* Image */}
+      <div className="col-12 col-md-4 text-center service-img-wrapper">
+        <img
+          src={img6}
+          className="img-fluid rounded-start service-img"
+          alt="Software Solutions"
+        />
+      </div>
+
+      {/* Text */}
+      <div className="col-12 col-md-8">
+        <div className="card-body">
+          <h3 className="card-title acc-txt">Software Solutions</h3>
+          <hr />
+
+          <p className="card-text">
+            <i className="fas fa-check check-icon"></i>
+            Manager Accounting system setup and configuration
+          </p>
+
+          <p className="card-text">
+            <i className="fas fa-check check-icon"></i>
+            Customized chart of accounts based on business needs
+          </p>
+
+          <p className="card-text">
+            <i className="fas fa-check check-icon"></i>
+            Accurate financial reporting and real-time insights
+          </p>
+
+          <p className="card-text">
+            <i className="fas fa-check check-icon"></i>
+            Ongoing support and system optimization
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</a>
+
+
 {/* bbbbbbbbbbbb */}
  <div className="card service-card p-3 mx-auto">
         <div className="row g-0 align-items-center">

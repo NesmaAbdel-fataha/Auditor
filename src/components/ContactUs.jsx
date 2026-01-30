@@ -12,33 +12,56 @@ const ContactUs = () => {
         <div className="row g-0">
 
           {/* Form */}
-          <div className="col-md-8 form-contact">
-            <div className="card-body text-start">
-              <h5 className="card-title mb-3">Send us a message</h5>
+        <div className="col-md-8 form-contact">
+  <div className="card-body text-start">
+    <h5 className="card-title mb-3">Send us a message</h5>
 
-              <div className="mb-3">
-                <label className="form-label">Email address</label>
-                <input
-                  type="email"
-                  className="form-control"
-                  placeholder="Enter your email"
-                />
-              </div>
+    {/* Email */}
+    <div className="mb-3">
+      <label className="form-label">Email address</label>
+      <input
+        type="email"
+        className="form-control"
+        placeholder="Enter your email"
+      />
+    </div>
 
-              <div className="mb-3">
-                <label className="form-label">Your Message</label>
-                <textarea
-                  className="form-control"
-                  rows="4"
-                  placeholder="Write your message here..."
-                ></textarea>
-              </div>
+    {/* Phone */}
+    <div className="mb-3">
+      <label className="form-label">Phone Number</label>
+      <input
+        type="tel"
+        className="form-control"
+        placeholder="Enter your phone number"
+      />
+    </div>
 
-              <button className="btn btn-danger">
-                Send Message
-              </button>
-            </div>
-          </div>
+    {/* Address */}
+    <div className="mb-3">
+      <label className="form-label">Address</label>
+      <input
+        type="text"
+        className="form-control"
+        placeholder="Enter your address"
+      />
+    </div>
+
+    {/* Message */}
+    <div className="mb-3">
+      <label className="form-label">Your Message</label>
+      <textarea
+        className="form-control"
+        rows="4"
+        placeholder="Write your message here..."
+      ></textarea>
+    </div>
+
+    <button className="btn btn-danger">
+      Send Message
+    </button>
+  </div>
+</div>
+
 
           {/* Map */}
           <div className="col-md-4">

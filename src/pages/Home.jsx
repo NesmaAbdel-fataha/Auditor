@@ -1,11 +1,11 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Bannar from '../components/Bannar'
-import Minicard from '../components/Minicard'
-import Slider from '../components/PartnersSlider'
-import About from '../components/About'
-import StatsSection from '../components/StatsSection'
-import Footer from '../components/Footer'
+
+import Bannar from '../components/Bannar.jsx'
+import Minicard from '../components/Minicard.jsx'
+import Slider from '../components/PartnersSlider.jsx'
+import About from '../components/About.jsx'
+import StatsSection from '../components/StatsSection.jsx'
+import Footer from '../components/Footer.jsx'
 
 function Home() {
   return (
