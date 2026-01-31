@@ -140,7 +140,9 @@ const Minicard = () => {
               <i className="fas fa-cogs fa-lg mb-2 card-icon"></i>
               <h6 className="mb-1">ERP Advisory</h6>
               <p className="small mb-0">
-                Choose the right system.
+              
+Helping your business choose the right ERP with expert guidance.
+
               </p>
             </div>
           </a>
