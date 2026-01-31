@@ -14,7 +14,9 @@ const OurGoals = () => {
           </h3>
 
           <p class="text-muted mb-0 fs-6">
-We provide our services in all financial, tax and legal aspects. we offer variated economical and administrative solutions to upgrade our clients and keep their own projects continued and developed. In addition, we help our clients to exploit lost and untapped investment opportunities, which many owners of companies and commercial establishments may be ignorant of.          </p>
+
+We provide our services in all financial, tax and legal aspects. we offer variated economical and administrative solutions to upgrade our clients and keep their own projects continued and developed. In addition, we help our clients to exploit lost and untapped investment opportunities, which many owners of companies and commercial establishments may be ignorant of.
+        </p>
 
         </div>
       </div>

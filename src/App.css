@@ -141,7 +141,7 @@ padding-top: 150px;
 /* الكاردات */
 .minicards-container {
   position: relative;
-  margin-top: -150px !important;
+  margin-top: -140px !important;
   z-index: 5;
 }
 
@@ -154,7 +154,6 @@ padding-top: 150px;
 
 .card-move:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
 }
 
 .card-icon {

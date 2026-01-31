@@ -14,8 +14,7 @@ const OurMission = () => {
           </h3>
 
           <p class="text-muted mb-0 fs-6">
-            We always strive for excellence and accomplish tasks in top quality through distinguished teamwork who have awareness of the client importance and had necessary training, as our aim is to build good relations with our clients.
-          </p>
+We always strive for excellence and accomplish tasks in top quality through distinguished teamwork who have awareness of the client importance and had necessary training, as our aim is to build good relations with our clients.          </p>
 
         </div>
       </div>

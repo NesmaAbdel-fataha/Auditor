@@ -15,8 +15,7 @@ const OurVision = () => {
 
           <p class="text-muted mb-0 fs-6">
             
-We aim to be one of the best Accounting and<strong>Auditing Offices in Egypt</strong>  and being in competent at the Arabic Nation level with providing financial and administrative services for our clients.
-          </p>
+We aim to be one of the best Accounting and Auditing Offices in <strong>Egypt and being in competent</strong>  at the Arabic Nation level with providing financial and administrative services for our clients.          </p>
 
         </div>
       </div>

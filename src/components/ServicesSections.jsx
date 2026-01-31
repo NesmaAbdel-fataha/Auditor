@@ -61,27 +61,27 @@ const ServicesSections = () => {
       {/* Text */}
       <div className="col-12 col-md-8">
         <div className="card-body">
-          <h3 className="card-title acc-txt">Software Solutions</h3>
+          <h3 className="card-title acc-txt">System Selection and ERP Advisory </h3>
           <hr />
 
           <p className="card-text">
             <i className="fas fa-check check-icon"></i>
-            Manager Accounting system setup and configuration
+           Assessing your current workflows
           </p>
 
           <p className="card-text">
             <i className="fas fa-check check-icon"></i>
-            Customized chart of accounts based on business needs
+           Recommending the best-fit ERP system
           </p>
 
           <p className="card-text">
             <i className="fas fa-check check-icon"></i>
-            Accurate financial reporting and real-time insights
+            Ensuring smooth selection & planning
           </p>
 
           <p className="card-text">
             <i className="fas fa-check check-icon"></i>
-            Ongoing support and system optimization
+           Vendor-neutral, expert-driven advice
           </p>
         </div>
       </div>
