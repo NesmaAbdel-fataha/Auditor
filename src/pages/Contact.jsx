@@ -2,12 +2,11 @@ import React from 'react'
 import ContactUs from '../components/ContactUs.jsx'
 import Footer from '../components/Footer.jsx'
 
-function Contact() {
+function Contact({ setUserEmail, userEmail }) {
   return (
     <>
-    <ContactUs/>
-    <Footer/>
-   
+      <ContactUs setUserEmail={setUserEmail} userEmail={userEmail} />
+      <Footer />
     </>
   )
 }
