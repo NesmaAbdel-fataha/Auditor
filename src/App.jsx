@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-=======
+
 // App.js أو الملف الرئيسي
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
->>>>>>> 33b73d53b7591f573271b874fff59ff58407521f
 import Navbar from './components/Navbar.jsx';
 import Home from './pages/Home.jsx';
 import About from './pages/AboutUs.jsx';
