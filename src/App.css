@@ -560,3 +560,8 @@ footer{
   bottom: 0;
   left: 0;
 }
+/* dashboard */
+
+.mt-5-text{
+  margin-block: 6rem;
+}

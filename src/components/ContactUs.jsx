@@ -1,36 +1,39 @@
 
-  import React, { useState } from 'react';
+
+import React, { useState } from 'react';
 import '../App.css';
 import axios from 'axios';
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
-const ContactUs = ({ setUserEmail }) => {
+
+const ContactUs = ({ setUserEmail, setRole ,role }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [msg, setMsg] = useState("");
+  // const [msg, setMsg] = useState("");
   const [message, setMessage] = useState("");
+const navigate = useNavigate();
 
+
+  // إرسال الرسالة للكونتاكت
   const handleSendMessage = async () => {
-  try {
-    const senderEmail = localStorage.getItem("userEmail");
+    try {
+      const senderEmail = localStorage.getItem("userEmail");
 
-    const res = await axios.post(
-      "http://localhost:5000/api/contact",
-      {
+      const res = await axios.post("http://localhost:5000/api/contact", {
         senderEmail,
         message,
-      }
-    );
+      });
 
-    alert(res.data.message);
-    setMessage("");
+toast.success(res.data.message);
+      setMessage("");
+    } catch (error) {
+      console.log(error);
+toast.error("Error sending message");
+    }
+  };
 
-  } catch (error) {
-    console.log(error);
-    alert("Error sending message");
-  }
-};
-
-
+  // تسجيل الدخول
   const handleLogin = async () => {
     try {
       const res = await axios.post("http://localhost:5000/api/auth/login", {
@@ -38,16 +41,19 @@ const ContactUs = ({ setUserEmail }) => {
         password,
       });
 
-      setMsg(res.data.message);
-      localStorage.setItem("userEmail", res.data.email);
+      // خزني البيانات في localStorage
+      localStorage.setItem("token", res.data.token);
       localStorage.setItem("role", res.data.role);
+      localStorage.setItem("userEmail", res.data.email);
 
-      // ✅ تحديث النافبار فورًا
+      // ✅ تحديث state في App.jsx فورًا
       setUserEmail(res.data.email);
+      setRole(res.data.role);
 
+toast.success(res.data.message);
     } catch (error) {
       console.log(error);
-      setMsg("Server not responding");
+toast.error(error.response?.data?.message || "Server not responding");
     }
   };
 
@@ -78,8 +84,9 @@ const ContactUs = ({ setUserEmail }) => {
                   onChange={(e)=>setEmail(e.target.value)}
                 />
               </div>
-              {/* password */}
-                  <div className="mb-3">
+
+              {/* Password input */}
+              <div className="mb-3">
                 <label className="form-label">Password</label>
                 <input
                   type="password"
@@ -91,13 +98,31 @@ const ContactUs = ({ setUserEmail }) => {
               </div>
 
               {/* Login Button */}
-              <div className="mb-4">
-                <button className="btn btn-primary w-100 mb-3" onClick={handleLogin}>
-                  Login
-                </button>
-                {msg && <p className="mt-3">{msg}</p>}
-              </div>
-              {/* Message */}
+<div className="mb-4">
+
+  {!role && (
+    <button
+      className="btn btn-primary w-100 mb-3"
+      onClick={handleLogin}
+    >
+      Login
+    </button>
+  )}
+
+  {role === "admin" && (
+    <button
+      className="btn btn-success w-100 mb-3"
+      onClick={() => navigate("/admin")}
+    >
+      Go To Dashboard
+    </button>
+  )}
+
+</div>
+
+
+
+              {/* Message input */}
               <div className="mb-4">
                 <label className="form-label">Your Message</label>
                 <textarea
@@ -105,7 +130,7 @@ const ContactUs = ({ setUserEmail }) => {
                   rows="4"
                   placeholder="Write your message here..."
                   value={message}
-  onChange={(e) => setMessage(e.target.value)}
+                  onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
               </div>
 

@@ -1,13 +1,28 @@
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { useEffect } from "react";
-const Navbar = ({ userEmail ,role}) => {
+const Navbar = ({ userEmail ,role,onLogout }) => {
   const username = userEmail ? userEmail.split("@")[0] : null;
 useEffect(() => {
     console.log("User Email:", userEmail);
     console.log("Username:", username);
     console.log("Role:", role); // user أو admin
   }, [userEmail, role]);
+
+//   const handleLogout = () => {
+//   // مسح البيانات من localStorage
+//   localStorage.removeItem("token");
+//   localStorage.removeItem("role");
+//   localStorage.removeItem("userEmail");
+
+//   // لو عندك state في App.jsx
+//   setUserEmail(null);
+//   setRole(null);
+
+//   // إعادة التوجيه للهوم
+//   window.location.href = "/";
+// };
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container">
@@ -44,6 +59,21 @@ useEffect(() => {
             <li className="nav-item">
               <NavLink to="/contact" className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"}>Contact</NavLink>
             </li>
+            {role === "admin" && (
+  <li className="nav-item">
+    <NavLink to="/admin" className="nav-link">
+      Dashboard
+    </NavLink>
+  </li>
+)}
+{role === "admin" || role === "user" ? (
+  <li className="nav-item">
+    <button className="btn btn-danger ms-3" onClick={onLogout }>
+      Logout
+    </button>
+  </li>
+) : null}
+
           </ul>
         </div>
       </div>
