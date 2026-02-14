@@ -46,7 +46,7 @@ const ServicesSections = () => {
         </div>
       </div>
 {/* ssssssssssssssssssssssss */}
-<Link to="/ServicesPrograms" target='_blank' className="text-decoration-none text-dark">
+<Link to="/ServicesPrograms"  className="text-decoration-none text-dark">
   <div className="card service-card p-3 mx-auto h-100">
     <div className="row g-0 align-items-center">
 
