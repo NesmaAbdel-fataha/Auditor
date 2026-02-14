@@ -13,6 +13,7 @@ import AdminDashboard from "./pages/AdminDashboard.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 
 import { useState ,useEffect } from 'react';
+import ServicesPrograms from "./pages/ServicesPrograms.jsx";
 
 function App() {
   // هنا نخزن ايميل اليوزر لتحديث Navbar فورًا
@@ -68,6 +69,7 @@ const [role, setRole] = useState(localStorage.getItem("role") || null);
   }
 />
 
+  <Route path="/ServicesPrograms" element={<ServicesPrograms />} />
 
       </Routes>
     </Router>

@@ -6,6 +6,7 @@ import img4 from '../assets/investement2.png'
 import img5 from '../assets/ssrt.png'
 import img6 from '../assets/manger.png'
 import '../App.css'
+import { Link } from 'react-router-dom'
 
 const ServicesSections = () => {
   return (
@@ -45,7 +46,7 @@ const ServicesSections = () => {
         </div>
       </div>
 {/* ssssssssssssssssssssssss */}
-<a href="https://auditor-eg.com/" target='_blank' className="text-decoration-none text-dark">
+<Link to="/ServicesPrograms" target='_blank' className="text-decoration-none text-dark">
   <div className="card service-card p-3 mx-auto h-100">
     <div className="row g-0 align-items-center">
 
@@ -88,7 +89,7 @@ const ServicesSections = () => {
 
     </div>
   </div>
-</a>
+</Link>
 
 
 {/* bbbbbbbbbbbb */}
@@ -189,3 +190,4 @@ const ServicesSections = () => {
 
 export default ServicesSections
 
+ 
