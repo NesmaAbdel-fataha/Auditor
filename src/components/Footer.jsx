@@ -34,9 +34,9 @@ const Footer = () => {
   </a>
 </div>
   {/* admin link hidden/ discreet */}
-  <div className="admin-access">
+  {/* <div className="admin-access">
     <Link to="/admin-login" style={{fontSize:"0.75rem",color:"#ccc"}}>Admin Access</Link>
-  </div>
+  </div> */}
   </div>
   <div className="card-footer text-center text-white sub-footer">
    Copyright &copy; 2026 
