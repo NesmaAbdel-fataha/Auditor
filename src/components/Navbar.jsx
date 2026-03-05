@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../assets/new1_logo.png";
 import { useEffect } from "react";
 const Navbar = ({ userEmail ,role,onLogout }) => {
   const username = userEmail ? userEmail.split("@")[0] : null;
@@ -46,7 +46,11 @@ useEffect(() => {
         
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav m-auto">
-            {username && <li className="nav-item fw-bold text-primary">👋 {username}</li>}
+            {username && (
+              <li className="nav-item me-2">
+                <span className="username-badge">👋 {username}</span>
+              </li>
+            )}
             <li className="nav-item">
               <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"}>Home</NavLink>
             </li>
@@ -59,9 +63,12 @@ useEffect(() => {
             <li className="nav-item">
               <NavLink to="/contact" className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"}>Contact</NavLink>
             </li>
+            {/* <li className="nav-item">
+              <NavLink to="/user-form" className={({ isActive }) => isActive ? "nav-link active-link" : "nav-link"}>User Form</NavLink>
+            </li> */}
             {role === "admin" && (
   <li className="nav-item">
-    <NavLink to="/admin" className="nav-link">
+            <NavLink to="/admin-dashboard" className="nav-link">
       Dashboard
     </NavLink>
   </li>

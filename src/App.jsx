@@ -14,6 +14,8 @@ import ProtectedRoute from "./components/ProtectedRoute.jsx";
 
 import { useState ,useEffect } from 'react';
 import ServicesPrograms from "./pages/ServicesPrograms.jsx";
+import UserForm from "./pages/UserForm.jsx";
+import AdminLogin from "./pages/AdminLogin.jsx";
 
 function App() {
   // هنا نخزن ايميل اليوزر لتحديث Navbar فورًا
@@ -49,27 +51,26 @@ const [role, setRole] = useState(localStorage.getItem("role") || null);
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
-        {/* تمرير setUserEmail لـ ContactUs لتحديثه بعد اللوجين */}
-<Route 
-  path="/contact" 
-  element={
-    <Contact 
-      setUserEmail={setUserEmail} 
-      setRole={setRole}
-      role={role}
-    />
-  } 
-/>
+        {/* contact route now just shows the user submission form */}
+        <Route 
+          path="/contact" 
+          element={
+            <Contact />
+          } 
+        />
+        {/* new user form page */}
+        <Route path="/user-form" element={<UserForm />} />
+        <Route path="/admin-login" element={<AdminLogin setUserEmail={setUserEmail} setRole={setRole} />} />
         <Route
-  path="/admin"
-  element={
-    <ProtectedRoute roleRequired="admin" role={role}>
-      <AdminDashboard />
-    </ProtectedRoute>
-  }
-/>
+          path="/admin-dashboard"
+          element={
+            <ProtectedRoute roleRequired="admin" role={role}>
+              <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
 
-  <Route path="/ServicesPrograms" element={<ServicesPrograms />} />
+        <Route path="/ServicesPrograms" element={<ServicesPrograms />} />
 
       </Routes>
     </Router>

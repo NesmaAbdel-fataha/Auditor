@@ -8,186 +8,269 @@ import img6 from '../assets/manger.png'
 import '../App.css'
 import { Link } from 'react-router-dom'
 
-const ServicesSections = () => {
+// Scoped styles for Services Section
+const serviceStyles = {
+  container: {
+    background: 'linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,249,250,1) 100%)',
+  },
+  sectionTitle: {
+    fontSize: '2.5rem',
+    fontWeight: '700',
+    marginBottom: '0.5rem',
+    color: '#2c3e50',
+    letterSpacing: '-0.5px',
+  },
+  sectionSubtitle: {
+    fontSize: '1.1rem',
+    color: '#7f8c8d',
+    marginBottom: '3rem',
+    fontWeight: '400',
+  },
+  cardImage: {
+    height: '200px',
+    objectFit: 'cover',
+    objectPosition: 'center',
+    backgroundColor: '#f8f9fa',
+  },
+  card: {
+    cardContainer: {
+      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+      cursor: 'pointer',
+      height: '100%',
+    },
+    cardHover: {
+      transform: 'translateY(-8px)',
+      boxShadow: '0 12px 28px rgba(0, 0, 0, 0.12)',
+    },
+  },
+  serviceTitle: {
+    fontSize: '1.25rem',
+    fontWeight: '700',
+    color: '#2c3e50',
+    marginBottom: '1rem',
+  },
+  serviceFeature: {
+    fontSize: '0.95rem',
+    color: '#555',
+    marginBottom: '0.6rem',
+    lineHeight: '1.5',
+  },
+  featureIcon: {
+    marginRight: '0.8rem',
+    color: '#27ae60',
+    fontWeight: '600',
+  },
+}
+
+// ServiceCard Component
+const ServiceCard = ({ image, title, features }) => {
+  const [isHovered, setIsHovered] = React.useState(false)
+
   return (
-    <div className='services-container my-5 py-4'>
-
-      {/* Title Section */}
-      <div className=" text-center border-0">
-        <div className="card-body">
-          <h2 className="card-title font-txt">Our Services</h2>
-          <p className="card-text">
-            We provide a range of professional services to meet your business needs.
-          </p>
-        </div>
-      </div>
-
-      {/* Service Card */}
-      <div className="card service-card p-3 mx-auto">
-        <div className="row g-0 align-items-center">
-
-          {/* Image */}
-          <div className="col-12 col-md-4 text-center service-img-wrapper">
-            <img src={img} className="img-fluid rounded-start service-img" alt="Accounting Service" />
-          </div>
-
-          {/* Text */}
-          <div className="col-12 col-md-8">
-            <div className="card-body">
-              <h3 className="card-title acc-txt">Accounting Services</h3>
-              <hr/>
-              <p className="card-text"><i className="fas fa-check check-icon"></i> Accounting System Setup</p>
-              <p className="card-text"><i className="fas fa-check check-icon"></i> Bookkeeping & Transactions</p>
-              <p className="card-text"><i className="fas fa-check check-icon"></i> Financial Statements Preparation</p>
-              <p className="card-text"><i className="fas fa-check check-icon"></i> Payroll & Social Insurance</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-{/* ssssssssssssssssssssssss */}
-<Link to="/ServicesPrograms"  className="text-decoration-none text-dark">
-  <div className="card service-card p-3 mx-auto h-100">
-    <div className="row g-0 align-items-center">
-
-      {/* Image */}
-      <div className="col-12 col-md-4 text-center service-img-wrapper">
+    <div
+      className="card border-0 rounded-4 shadow-sm h-100"
+      style={{
+        ...serviceStyles.card.cardContainer,
+        ...(isHovered && serviceStyles.card.cardHover),
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Image Container */}
+      <div className="overflow-hidden" style={{ height: '200px' }}>
         <img
-          src={img6}
-          className="img-fluid rounded-start service-img"
-          alt="Software Solutions"
+          src={image}
+          className="w-75 mx-auto d-block"
+          style={serviceStyles.cardImage}
+          alt={title}
         />
       </div>
 
-      {/* Text */}
-      <div className="col-12 col-md-8">
-        <div className="card-body">
-          <h3 className="card-title acc-txt">System Selection and ERP Advisory </h3>
-          <hr />
+      {/* Content Container */}
+      <div className="card-body d-flex flex-column p-4">
+        <h3 className="card-title mb-3" style={serviceStyles.serviceTitle}>
+          {title}
+        </h3>
 
-          <p className="card-text">
-            <i className="fas fa-check check-icon"></i>
-           Assessing your current workflows
-          </p>
-
-          <p className="card-text">
-            <i className="fas fa-check check-icon"></i>
-           Recommending the best-fit ERP system
-          </p>
-
-          <p className="card-text">
-            <i className="fas fa-check check-icon"></i>
-            Ensuring smooth selection & planning
-          </p>
-
-          <p className="card-text">
-            <i className="fas fa-check check-icon"></i>
-           Vendor-neutral, expert-driven advice
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</Link>
-
-
-{/* bbbbbbbbbbbb */}
- <div className="card service-card p-3 mx-auto">
-        <div className="row g-0 align-items-center">
-
-          {/* Image */}
-          <div className="col-12 col-md-4 text-center service-img-wrapper">
-            <img src={img2} className="img-fluid rounded-start service-img" alt="Auditing Services" />
-          </div>
-
-          {/* Text */}
-          <div className="col-12 col-md-8">
-            <div className="card-body">
-              <h3 className="card-title acc-txt">Auditing Services</h3>
-              <hr/>
-              <p className="card-text"><i className="fas fa-check check-icon"></i> Financial Audit</p>
-              <p className="card-text"><i className="fas fa-check check-icon"></i> Records Examination</p>
-              <p className="card-text"><i className="fas fa-check check-icon"></i> Internal Controls Review</p>
-              <p className="card-text"><i className="fas fa-check check-icon"></i> Audit Reports</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      {/* bbbbbbbbbbbbbbbb */}
-       <div className="card service-card p-3 mx-auto">
-        <div className="row g-0 align-items-center">
-
-          {/* Image */}
-          <div className="col-12 col-md-4 text-center service-img-wrapper">
-            <img src={img3} className="img-fluid rounded-start service-img" alt="Tax Services" />
-          </div>
-
-          {/* Text */}
-          <div className="col-12 col-md-8">
-            <div className="card-body">
-              <h3 className="card-title acc-txt">Tax Services</h3>
-              <hr/>
-              <p className="card-text"><i className="fas fa-check check-icon"></i> Tax Return Preparation</p>
-              <p className="card-text"><i className="fas fa-check check-icon"></i> Income Tax & VAT</p>
-              <p className="card-text"><i className="fas fa-check check-icon"></i> Tax Reviews</p>
-              <p className="card-text"><i className="fas fa-check check-icon"></i> Tax Consulting</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-        {/* bbbbbbbbbbbbbbbb */}
-       <div className="card service-card p-3 mx-auto">
-        <div className="row g-0 align-items-center">
-
-          {/* Image */}
-          <div className="col-12 col-md-4 text-center service-img-wrapper">
-            <img src={img4} className="img-fluid rounded-start service-img" alt="Company Formation & Investment" />
-          </div>
-
-          {/* Text */}
-          <div className="col-12 col-md-8">
-            <div className="card-body">
-              <h3 className="card-title acc-txt">Company Formation & Investment</h3>
-              <hr/>
-              <p className="card-text"><i className="fas fa-check check-icon"></i> Company Formation</p>
-              <p className="card-text"><i className="fas fa-check check-icon"></i> Business Licensing</p>
-              <p className="card-text"><i className="fas fa-check check-icon"></i> Legal Documentation</p>
-              <p className="card-text"><i className="fas fa-check check-icon"></i> Investment Advisory</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-       <div className="card service-card p-3 mx-auto">
-        <div className="row g-0 align-items-center">
-
-          {/* Image */}
-          <div className="col-12 col-md-4 text-center service-img-wrapper">
-            <img src={img5} className="img-fluid rounded-start service-img" alt="Feasibility & Consulting" />
-          </div>
-
-          {/* Text */}
-          <div className="col-12 col-md-8">
-            <div className="card-body">
-              <h3 className="card-title acc-txt">Feasibility & Consulting</h3>
-              <hr/>
-              <p className="card-text"><i className="fas fa-check check-icon"></i> Feasibility Studies</p>
-              <p className="card-text"><i className="fas fa-check check-icon"></i> Financial Analysis</p>
-              <p className="card-text"><i className="fas fa-check check-icon"></i> Business Consulting</p>
-              <p className="card-text"><i className="fas fa-check check-icon"></i> Project Financing</p>
-            </div>
-          </div>
-
+        {/* Features List */}
+        <div className="flex-grow-1">
+          {features.map((feature, index) => (
+            <p key={index} className="mb-2" style={serviceStyles.serviceFeature}>
+              <i
+                className="fas fa-check"
+                style={serviceStyles.featureIcon}
+              ></i>
+              {feature}
+            </p>
+          ))}
         </div>
       </div>
     </div>
   )
 }
 
-export default ServicesSections
+// Linked ServiceCard Component
+const LinkedServiceCard = ({ to, image, title, features }) => {
+  const [isHovered, setIsHovered] = React.useState(false)
 
- 
+  return (
+    <Link to={to} className="text-decoration-none text-reset h-100">
+      <div
+        className="card border-0 rounded-4 shadow-sm h-100"
+        style={{
+          ...serviceStyles.card.cardContainer,
+          ...(isHovered && serviceStyles.card.cardHover),
+        }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {/* Image Container */}
+        <div className="overflow-hidden" style={{ height: '200px' }}>
+          <img
+            src={image}
+            className="w-100"
+            style={serviceStyles.cardImage}
+            alt={title}
+          />
+        </div>
+
+        {/* Content Container */}
+        <div className="card-body d-flex flex-column p-4">
+          <h3 className="card-title mb-3" style={serviceStyles.serviceTitle}>
+            {title}
+          </h3>
+
+          {/* Features List */}
+          <div className="flex-grow-1">
+            {features.map((feature, index) => (
+              <p key={index} className="mb-2" style={serviceStyles.serviceFeature}>
+                <i
+                  className="fas fa-check"
+                  style={serviceStyles.featureIcon}
+                ></i>
+                {feature}
+              </p>
+            ))}
+          </div>
+        </div>
+      </div>
+    </Link>
+  )
+}
+
+const ServicesSections = () => {
+  // Services Data
+  const services = [
+    {
+      id: 1,
+      image: img,
+      title: 'Accounting Services',
+      features: [
+        'Accounting System Setup',
+        'Bookkeeping & Transactions',
+        'Financial Statements Preparation',
+        'Payroll & Social Insurance',
+      ],
+    },
+    {
+      id: 2,
+      image: img6,
+      title: 'System Selection',
+      features: [
+        'Assess requirements & workflows',
+        'Evaluate vendor fit and options',
+        'Implementation roadmap & planning',
+        'Vendor-neutral recommendations',
+      ],
+      isLinked: true,
+      linkTo: '/ServicesPrograms',
+    },
+    {
+      id: 3,
+      image: img2,
+      title: 'Auditing Services',
+      features: [
+        'Financial Audit',
+        'Records Examination',
+        'Internal Controls Review',
+        'Audit Reports',
+      ],
+    },
+    {
+      id: 4,
+      image: img3,
+      title: 'Tax Services',
+      features: [
+        'Tax Return Preparation',
+        'Income Tax & VAT',
+        'Tax Reviews',
+        'Tax Consulting',
+      ],
+    },
+    {
+      id: 4,
+      image: img4,
+      title: 'Company Formation & Investment',
+      features: [
+        'Company Formation',
+        'Business Licensing',
+        'Legal Documentation',
+        'Investment Advisory',
+      ],
+    },
+    {
+      id: 5,
+      image: img5,
+      title: 'Feasibility & Consulting',
+      features: [
+        'Feasibility Studies',
+        'Financial Analysis',
+        'Business Consulting',
+        'Project Financing',
+      ],
+    },
+    
+  ]
+
+  return (
+    <section className="py-5" style={serviceStyles.container}>
+      <div className="container">
+        {/* Section Header */}
+        <div className="text-center mt-5 mb-5">
+          <h2 className="fw-bold" style={serviceStyles.sectionTitle}>
+            Our Services
+          </h2>
+          <p style={serviceStyles.sectionSubtitle}>
+            We provide a range of professional services to meet your business needs.
+          </p>
+        </div>
+
+        {/* Services Grid */}
+        <div className="row g-4">
+          {services.map((service) =>
+            service.isLinked ? (
+              <div key={service.id} className="col-12 col-sm-6 col-lg-4">
+                <LinkedServiceCard
+                  to={service.linkTo || '/ServicesPrograms'}
+                  image={service.image}
+                  title={service.title}
+                  features={service.features}
+                />
+              </div>
+            ) : (
+              <div key={service.id} className="col-12 col-sm-6 col-lg-4">
+                <ServiceCard
+                  image={service.image}
+                  title={service.title}
+                  features={service.features}
+                />
+              </div>
+            )
+          )}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default ServicesSections

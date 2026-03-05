@@ -5,7 +5,7 @@ import Footer from '../components/Footer.jsx'
 import '../App.css'
 function Services() {
   return (
-    <div className='box-services'>
+    <div>
      
       <div className='container '>
       <ServicesSections/>
